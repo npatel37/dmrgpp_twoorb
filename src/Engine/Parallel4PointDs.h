@@ -179,7 +179,7 @@ private:
 		tmp = j % number1;
 		SizeType thinj2 = tmp/number2;
 		SizeType thinj1 = tmp % number2;
-		int sign = gammas[0] - 1;
+		//int sign = gammas[0] - 1;
 
 		SizeType site = 0;
 
@@ -200,12 +200,14 @@ private:
 		//SparseMatrixType O4 = model_.naturalOperator("c",site,1-spin1).data;
 
 
-		SizeType val = spin0 + spin1 + 1;
-		int signTerm = (val & 1) ? sign : 1;
+//		SizeType val = spin0 + spin1 + 1;
+//		int signTerm = (val & 1) ? sign : 1;
+//		FieldType fourval = fourpoint_(thini1,thini2,thinj1,thinj2,braket,threadId);
+//		return signTerm*fourval;
+
 		BraketType braket(model_, str);
-
-		return signTerm*fourpoint_(thini1,thini2,thinj1,thinj2,braket,threadId);
-
+		FieldType fourval = fourpoint_(thini1,thini2,thinj1,thinj2,braket,threadId);
+		return fourval;
 	}
 
 	MatrixType& fpd_;
