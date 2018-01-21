@@ -1148,6 +1148,20 @@ private:
 		std::cout << "PairPair Correlations T^{lu}_{nn}" << std::endl;
 		std::cout << m2;
 
+
+		m1.clear();
+		m2.clear();
+		m1.resize(rows,cols);
+		m2.resize(rows,cols);
+		ppFour(m1,m2,0,1,1,0,onsiteOrNot,-1);
+//		result.push_back(m1);
+		std::cout << "PairPair Correlations S_RL^{lu}_{nn}" << std::endl;
+		std::cout << m1;
+		std::cout << "PairPair Correlations T_RL^{lu}_{nn}" << std::endl;
+		std::cout << m2;
+
+
+
 //		m1 = new MatrixType(rows,cols);
 //		std::cout << "PairPair Correlations S^{l-u}_{nn}" << std::endl;
 //		names.push_back("S^{l-u}_{nn}");
